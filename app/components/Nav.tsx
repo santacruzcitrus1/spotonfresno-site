@@ -8,7 +8,7 @@ export default function Nav() {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/services", label: "Services" },
-    { href: "/about", label: "About Garo" },
+    { href: "/about", label: "About" },
     { href: "/service-areas", label: "Service Areas" },
     { href: "/blog", label: "Blog" },
     { href: "/contact", label: "Contact" },

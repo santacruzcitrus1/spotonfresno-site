@@ -1,13 +1,7 @@
-import type { Metadata } from "next";
+"use client";
 import Link from "next/link";
 import ReviewRotator from "./components/ReviewRotator";
 import CityPills from "./components/CityPills";
-
-export const metadata: Metadata = {
-  title: "Spot On Carpet & Tile Cleaning | Fresno's #1 Eco-Friendly Cleaner | (559) 721-4400",
-  description:
-    "Fresno's top-rated carpet, tile & upholstery cleaning. 5.0 stars, 28 reviews. Eco-friendly, biodegradable products. 80% less water — dry in 4 hours. Licensed & insured. Call (559) 721-4400.",
-};
 
 const services = [
   { icon: "🏠", title: "Carpet Cleaning", desc: "Deep clean that lifts dirt, stains, and allergens from every fiber. Dry in as little as 4 hours." },
@@ -227,10 +221,10 @@ export default function Home() {
             <div className="section-tag">The Man Behind Spot On</div>
             <h2 className="section-title">More Than Clean —<br />Built for Fresno</h2>
             <p style={{ color: "#555", lineHeight: 1.8, marginBottom: 20, fontSize: "1.05rem" }}>
-              A lifelong Fresno resident. When Spot On Carpet & Tile Cleaning launched, the mission was clear — serve the same neighbors, families, and community that built this valley.
+              Garo has called Fresno home his entire life. When he launched Spot On Carpet & Tile Cleaning, the mission was clear — serve the same neighbors, families, and community that built this valley.
             </p>
             <p style={{ color: "#555", lineHeight: 1.8, marginBottom: 20, fontSize: "1.05rem" }}>
-              Beyond the job, there's volunteer work at church and coaching the Tanya Braves 8th grade football team — giving back to the Central Valley the same way it gave to us.
+              Beyond the job, Garo volunteers at church and coaches the Tanya Braves 8th grade football team — giving back to the Central Valley the same way it gave to him.
             </p>
             <p style={{ color: "#555", lineHeight: 1.8, marginBottom: 32, fontSize: "1.05rem" }}>
               When you call Spot On, you're not calling a franchise. You're calling your neighbor.
