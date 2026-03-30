@@ -171,10 +171,26 @@ export default function Home() {
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 24 }}>
             {services.map((service) => (
-              <div key={service.title} className="card" style={{ borderTop: "4px solid #CC0000" }}>
+              <div key={service.title} className="card" style={{ 
+                background: "#1B2A4A", 
+                borderTop: "4px solid #1B2A4A",
+                padding: "24px",
+                borderRadius: "12px",
+                transition: "all 0.3s ease",
+                cursor: "pointer"
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = "0 0 24px 0 rgba(204,0,0,0.6), inset 0 0 24px 0 rgba(204,0,0,0.1)";
+                e.currentTarget.style.borderColor = "#CC0000";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.08)";
+                e.currentTarget.style.borderColor = "#1B2A4A";
+              }}
+              >
                 <div style={{ fontSize: "2.4rem", marginBottom: 14 }}>{service.icon}</div>
-                <h3 style={{ color: "#1B2A4A", fontWeight: 700, fontSize: "1.1rem", marginBottom: 10 }}>{service.title}</h3>
-                <p style={{ color: "#555", lineHeight: 1.7, fontSize: "0.95rem" }}>{service.desc}</p>
+                <h3 style={{ color: "#fff", fontWeight: 700, fontSize: "1.1rem", marginBottom: 10 }}>{service.title}</h3>
+                <p style={{ color: "rgba(255,255,255,0.8)", lineHeight: 1.7, fontSize: "0.95rem" }}>{service.desc}</p>
               </div>
             ))}
           </div>
@@ -203,18 +219,18 @@ export default function Home() {
             gap: 12,
           }}>
             <div style={{ fontSize: "4rem" }}>📸</div>
-            <span>Garo's photo coming soon</span>
+            <span>Photo coming soon</span>
           </div>
 
           {/* Content */}
           <div>
             <div className="section-tag">The Man Behind Spot On</div>
-            <h2 className="section-title">More Than Clean —<br />Built for This Community</h2>
+            <h2 className="section-title">More Than Clean —<br />Built for Fresno</h2>
             <p style={{ color: "#555", lineHeight: 1.8, marginBottom: 20, fontSize: "1.05rem" }}>
-              Garo has called Fresno home his entire life. When he started Spot On Carpet & Tile Cleaning, he didn't just want to run a business — he wanted to serve the same neighbors, families, and community that raised him.
+              A lifelong Fresno resident. When Spot On Carpet & Tile Cleaning launched, the mission was clear — serve the same neighbors, families, and community that built this valley.
             </p>
             <p style={{ color: "#555", lineHeight: 1.8, marginBottom: 20, fontSize: "1.05rem" }}>
-              When he's not making carpets look brand new, Garo coaches the Tanya Braves 8th grade football team and volunteers at his church — giving back to the Central Valley the same way it gave to him.
+              Beyond the job, there's volunteer work at church and coaching the Tanya Braves 8th grade football team — giving back to the Central Valley the same way it gave to us.
             </p>
             <p style={{ color: "#555", lineHeight: 1.8, marginBottom: 32, fontSize: "1.05rem" }}>
               When you call Spot On, you're not calling a franchise. You're calling your neighbor.
@@ -242,7 +258,15 @@ export default function Home() {
           </div>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 32 }}>
-            <div style={{ padding: "36px 32px", background: "linear-gradient(135deg, #1B2A4A, #2a3f6f)", borderRadius: 16, color: "#fff" }}>
+            <div 
+              style={{ padding: "36px 32px", background: "linear-gradient(135deg, #1B2A4A, #2a3f6f)", borderRadius: 16, color: "#fff", transition: "all 0.3s ease", cursor: "pointer" }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = "0 0 28px 0 rgba(204,0,0,0.5), inset 0 0 28px 0 rgba(204,0,0,0.08)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = "0 4px 16px rgba(0,0,0,0.12)";
+              }}
+            >
               <div style={{ fontSize: "3rem", marginBottom: 16 }}>🌿</div>
               <h3 style={{ fontWeight: 700, fontSize: "1.2rem", marginBottom: 12 }}>100% Eco-Safe Products</h3>
               <p style={{ color: "rgba(255,255,255,0.8)", lineHeight: 1.7 }}>
@@ -253,7 +277,15 @@ export default function Home() {
               </Link>
             </div>
 
-            <div style={{ padding: "36px 32px", background: "linear-gradient(135deg, #CC0000, #AA0000)", borderRadius: 16, color: "#fff" }}>
+            <div 
+              style={{ padding: "36px 32px", background: "linear-gradient(135deg, #CC0000, #AA0000)", borderRadius: 16, color: "#fff", transition: "all 0.3s ease", cursor: "pointer" }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = "0 0 28px 0 rgba(204,0,0,0.6), inset 0 0 28px 0 rgba(204,0,0,0.1)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = "0 4px 16px rgba(0,0,0,0.12)";
+              }}
+            >
               <div style={{ fontSize: "3rem", marginBottom: 16 }}>💧</div>
               <h3 style={{ fontWeight: 700, fontSize: "1.2rem", marginBottom: 12 }}>80% Less Water</h3>
               <p style={{ color: "rgba(255,255,255,0.88)", lineHeight: 1.7 }}>
@@ -264,11 +296,19 @@ export default function Home() {
               </Link>
             </div>
 
-            <div style={{ padding: "36px 32px", border: "2px solid #e8e8e8", borderRadius: 16 }}>
+            <div 
+              style={{ padding: "36px 32px", border: "2px solid #e8e8e8", borderRadius: 16, transition: "all 0.3s ease", cursor: "pointer" }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = "0 0 28px 0 rgba(204,0,0,0.5), inset 0 0 28px 0 rgba(204,0,0,0.08)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = "0 4px 16px rgba(0,0,0,0.08)";
+              }}
+            >
               <div style={{ fontSize: "3rem", marginBottom: 16 }}>🏅</div>
               <h3 style={{ fontWeight: 700, fontSize: "1.2rem", marginBottom: 12, color: "#1B2A4A" }}>Licensed & Insured</h3>
               <p style={{ color: "#555", lineHeight: 1.7 }}>
-                Fully licensed and insured for your peace of mind. Garo stands behind every job — if it's not right, we make it right.
+                Fully licensed and insured for your peace of mind. We stand behind every job — if it's not right, we make it right.
               </p>
             </div>
           </div>
