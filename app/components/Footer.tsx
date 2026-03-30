@@ -6,24 +6,6 @@ export default function Footer() {
 
   return (
     <footer>
-      {/* CTA Strip */}
-      <div style={{ background: "#CC0000", padding: "48px 24px", textAlign: "center" }}>
-        <h2 style={{ color: "#fff", fontSize: "clamp(1.6rem, 3vw, 2.2rem)", fontWeight: 800, marginBottom: 12 }}>
-          Ready for Spot On Results?
-        </h2>
-        <p style={{ color: "rgba(255,255,255,0.9)", fontSize: "1.1rem", marginBottom: 28, maxWidth: 500, margin: "0 auto 28px" }}>
-          Call or text Garo today for a free quote. Fast response, next-day availability.
-        </p>
-        <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-          <a href="tel:5597214400" className="btn-white">
-            📞 Call (559) 721-4400
-          </a>
-          <Link href="/contact" style={{ display: "inline-block", background: "transparent", color: "#fff", padding: "14px 32px", borderRadius: 6, fontWeight: 700, fontSize: "1rem", textDecoration: "none", border: "2px solid rgba(255,255,255,0.7)" }}>
-            Get a Free Quote
-          </Link>
-        </div>
-      </div>
-
       {/* Main footer */}
       <div style={{ background: "#1B2A4A", padding: "56px 24px 32px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
