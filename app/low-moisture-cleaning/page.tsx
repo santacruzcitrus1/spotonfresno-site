@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AnimateIn from "../components/AnimateIn";
 
 export const metadata: Metadata = {
   title: "Low-Moisture Carpet Cleaning | 80% Less Water | Dry in 4 Hours",
@@ -21,12 +22,12 @@ export default function LowMoisturePage() {
     <>
       {/* Hero */}
       <section style={{
-        background: "linear-gradient(135deg, #1B2A4A 0%, #2a3f6f 50%, #1B2A4A 100%)",
+        background: "#1B2A4A",
         padding: "100px 24px 80px",
         textAlign: "center",
       }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
-          <div className="section-tag" style={{ background: "rgba(204,0,0,0.2)", color: "#fff" }}>Our Method</div>
+          
           <h1 style={{
             fontSize: "clamp(2rem, 5vw, 3.2rem)",
             fontWeight: 900,
@@ -60,8 +61,9 @@ export default function LowMoisturePage() {
               { step: "1", title: "Pre-Treatment", desc: "We apply an eco-safe pre-treatment that breaks down dirt and stains at the molecular level — before any cleaning begins.", icon: "🧪" },
               { step: "2", title: "Low-Moisture Extraction", desc: "Using controlled moisture, we lift dirt from deep in the fibers without saturating the carpet or padding. 80% less water than steam cleaning.", icon: "💧" },
               { step: "3", title: "Fast Dry", desc: "Because we use so little water, your carpet is dry and ready to walk on in approximately 4 hours — not 24 to 48.", icon: "⚡" },
-            ].map((item) => (
-              <div key={item.step} style={{ textAlign: "center" }}>
+            ].map((item, i) => (
+              <AnimateIn key={item.step} direction="up" delay={i * 100}>
+              <div style={{ textAlign: "center" }}>
                 <div style={{
                   width: 72, height: 72,
                   borderRadius: "50%",
@@ -84,6 +86,7 @@ export default function LowMoisturePage() {
                 <h3 style={{ color: "#1B2A4A", fontWeight: 700, fontSize: "1.1rem", marginBottom: 10 }}>{item.title}</h3>
                 <p style={{ color: "#555", lineHeight: 1.7, fontSize: "0.95rem" }}>{item.desc}</p>
               </div>
+              </AnimateIn>
             ))}
           </div>
         </div>

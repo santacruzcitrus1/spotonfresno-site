@@ -12,12 +12,12 @@ export default function BlogPost() {
     <>
       {/* Hero */}
       <section style={{
-        background: "linear-gradient(135deg, #1B2A4A 0%, #2a3f6f 50%, #1B2A4A 100%)",
+        background: "#1B2A4A",
         padding: "100px 24px 70px",
         textAlign: "center",
       }}>
         <div style={{ maxWidth: 750, margin: "0 auto" }}>
-          <div className="section-tag" style={{ background: "rgba(204,0,0,0.2)", color: "#fff" }}>Community</div>
+          
           <h1 style={{ fontSize: "clamp(1.8rem, 4.5vw, 2.8rem)", fontWeight: 900, color: "#fff", lineHeight: 1.2, marginBottom: 16 }}>
             Serving the Fresno Community: More Than Just Clean Carpets
           </h1>
@@ -34,7 +34,7 @@ export default function BlogPost() {
 
           <h2 style={{ fontSize: "1.3rem", fontWeight: 800, color: "#1B2A4A", marginBottom: 12 }}>Coaching the Next Generation 🏈</h2>
           <p style={{ color: "#555", lineHeight: 1.8, marginBottom: 28, fontSize: "1.02rem" }}>
-            When he&apos;s not making carpets spotless, Garo coaches the Tanya Braves 8th grade football team. For him, coaching isn&apos;t just about winning games — it&apos;s about mentoring young athletes, teaching discipline and teamwork, and showing kids in the Central Valley that people in their community believe in them.
+            When he&apos;s not making carpets spotless, Garo coaches the Tenaya Braves 8th grade football team. For him, coaching isn&apos;t just about winning games — it&apos;s about mentoring young athletes, teaching discipline and teamwork, and showing kids in the Central Valley that people in their community believe in them.
           </p>
 
           <h2 style={{ fontSize: "1.3rem", fontWeight: 800, color: "#1B2A4A", marginBottom: 12 }}>Faith & Service ⛪</h2>

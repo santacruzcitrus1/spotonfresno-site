@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AnimateIn from "../components/AnimateIn";
 
 export const metadata: Metadata = {
   title: "Contact Us | Get a Free Quote | (559) 721-4400",
@@ -12,12 +13,12 @@ export default function ContactPage() {
     <>
       {/* Hero */}
       <section style={{
-        background: "linear-gradient(135deg, #1B2A4A 0%, #2a3f6f 50%, #1B2A4A 100%)",
+        background: "#1B2A4A",
         padding: "100px 24px 80px",
         textAlign: "center",
       }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
-          <div className="section-tag" style={{ background: "rgba(204,0,0,0.2)", color: "#fff" }}>Contact Us</div>
+          
           <h1 style={{
             fontSize: "clamp(2rem, 5vw, 3.2rem)",
             fontWeight: 900,
@@ -38,6 +39,7 @@ export default function ContactPage() {
       <section style={{ padding: "88px 24px", background: "#fff" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 56 }}>
           {/* Left: Contact Info */}
+          <AnimateIn direction="left">
           <div>
             <h2 style={{ fontSize: "1.8rem", fontWeight: 800, color: "#1B2A4A", marginBottom: 28 }}>Get In Touch</h2>
 
@@ -101,17 +103,19 @@ export default function ContactPage() {
               📞 Call (559) 721-4400
             </a>
           </div>
+          </AnimateIn>
 
           {/* Right: Form */}
-          <div className="card" style={{ borderTop: "4px solid #CC0000", padding: 40 }}>
-            <h3 style={{ fontSize: "1.3rem", fontWeight: 800, color: "#1B2A4A", marginBottom: 8 }}>Request a Free Quote</h3>
-            <p style={{ color: "#888", fontSize: "0.9rem", marginBottom: 28 }}>
+          <AnimateIn direction="right" delay={150}>
+          <div className="card-dark" style={{ padding: 40 }}>
+            <h3 style={{ fontSize: "1.3rem", fontWeight: 800, color: "#fff", marginBottom: 8 }}>Request a Free Quote</h3>
+            <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.9rem", marginBottom: 28 }}>
               Fill out the form below and Garo will get back to you within 1 business hour.
             </p>
 
             <form action="https://formspree.io/f/placeholder" method="POST">
               <div style={{ marginBottom: 20 }}>
-                <label style={{ display: "block", fontWeight: 600, color: "#1B2A4A", marginBottom: 6, fontSize: "0.9rem" }}>
+                <label style={{ display: "block", fontWeight: 600, color: "rgba(255,255,255,0.9)", marginBottom: 6, fontSize: "0.9rem" }}>
                   Full Name *
                 </label>
                 <input
@@ -128,7 +132,7 @@ export default function ContactPage() {
               </div>
 
               <div style={{ marginBottom: 20 }}>
-                <label style={{ display: "block", fontWeight: 600, color: "#1B2A4A", marginBottom: 6, fontSize: "0.9rem" }}>
+                <label style={{ display: "block", fontWeight: 600, color: "rgba(255,255,255,0.9)", marginBottom: 6, fontSize: "0.9rem" }}>
                   Phone Number *
                 </label>
                 <input
@@ -145,7 +149,7 @@ export default function ContactPage() {
               </div>
 
               <div style={{ marginBottom: 20 }}>
-                <label style={{ display: "block", fontWeight: 600, color: "#1B2A4A", marginBottom: 6, fontSize: "0.9rem" }}>
+                <label style={{ display: "block", fontWeight: 600, color: "rgba(255,255,255,0.9)", marginBottom: 6, fontSize: "0.9rem" }}>
                   Email
                 </label>
                 <input
@@ -161,7 +165,7 @@ export default function ContactPage() {
               </div>
 
               <div style={{ marginBottom: 20 }}>
-                <label style={{ display: "block", fontWeight: 600, color: "#1B2A4A", marginBottom: 6, fontSize: "0.9rem" }}>
+                <label style={{ display: "block", fontWeight: 600, color: "rgba(255,255,255,0.9)", marginBottom: 6, fontSize: "0.9rem" }}>
                   Service Needed
                 </label>
                 <select
@@ -184,7 +188,7 @@ export default function ContactPage() {
               </div>
 
               <div style={{ marginBottom: 28 }}>
-                <label style={{ display: "block", fontWeight: 600, color: "#1B2A4A", marginBottom: 6, fontSize: "0.9rem" }}>
+                <label style={{ display: "block", fontWeight: 600, color: "rgba(255,255,255,0.9)", marginBottom: 6, fontSize: "0.9rem" }}>
                   Message
                 </label>
                 <textarea
@@ -206,11 +210,12 @@ export default function ContactPage() {
               >
                 Send My Free Quote Request
               </button>
-              <p style={{ color: "#888", fontSize: "0.8rem", textAlign: "center", marginTop: 12 }}>
+              <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.8rem", textAlign: "center", marginTop: 12 }}>
                 No spam, no pressure. Just an honest estimate.
               </p>
             </form>
           </div>
+          </AnimateIn>
         </div>
       </section>
 

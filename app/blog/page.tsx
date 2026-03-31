@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AnimateIn from "../components/AnimateIn";
 
 export const metadata: Metadata = {
   title: "Blog | Carpet & Tile Cleaning Tips | Fresno, CA",
@@ -47,12 +48,12 @@ export default function BlogPage() {
     <>
       {/* Hero */}
       <section style={{
-        background: "linear-gradient(135deg, #1B2A4A 0%, #2a3f6f 50%, #1B2A4A 100%)",
+        background: "#1B2A4A",
         padding: "100px 24px 80px",
         textAlign: "center",
       }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
-          <div className="section-tag" style={{ background: "rgba(204,0,0,0.2)", color: "#fff" }}>Blog</div>
+          
           <h1 style={{
             fontSize: "clamp(2rem, 5vw, 3.2rem)",
             fontWeight: 900,
@@ -70,16 +71,25 @@ export default function BlogPage() {
       </section>
 
       {/* Blog Grid */}
-      <section style={{ padding: "88px 24px", background: "#F5F5F5" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+      <section style={{
+        padding: "88px 24px",
+        backgroundColor: "#F5F5F5",
+        backgroundImage: "url(/spotonfresno-site/fresno-downtown.jpg)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        position: "relative",
+      }}>
+        <div style={{ position: "absolute", inset: 0, backgroundColor: "rgba(245,245,245,0.50)", pointerEvents: "none" }} />
+        <div style={{ maxWidth: 1100, margin: "0 auto", position: "relative", zIndex: 1 }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 28 }}>
-            {posts.map((post) => (
+            {posts.map((post, i) => (
+              <AnimateIn key={post.slug} direction="up" delay={i * 80}>
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
                 style={{ textDecoration: "none", color: "inherit" }}
               >
-                <div className="card" style={{ height: "100%", borderTop: "4px solid #CC0000", display: "flex", flexDirection: "column" }}>
+                <div className="card-dark" style={{ height: "100%", display: "flex", flexDirection: "column" }}>
                   <div style={{
                     display: "inline-block",
                     background: "rgba(204,0,0,0.08)",
@@ -95,18 +105,19 @@ export default function BlogPage() {
                   }}>
                     {post.tag}
                   </div>
-                  <h2 style={{ fontSize: "1.2rem", fontWeight: 800, color: "#1B2A4A", lineHeight: 1.3, marginBottom: 12 }}>
+                  <h2 style={{ fontSize: "1.2rem", fontWeight: 800, color: "#fff", lineHeight: 1.3, marginBottom: 12 }}>
                     {post.title}
                   </h2>
-                  <p style={{ color: "#555", lineHeight: 1.7, fontSize: "0.95rem", flex: 1 }}>
+                  <p style={{ color: "rgba(255,255,255,0.8)", lineHeight: 1.7, fontSize: "0.95rem", flex: 1 }}>
                     {post.excerpt}
                   </p>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 20, paddingTop: 16, borderTop: "1px solid #eee" }}>
-                    <span style={{ color: "#888", fontSize: "0.8rem" }}>{post.date}</span>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 20, paddingTop: 16, borderTop: "1px solid rgba(255,255,255,0.15)" }}>
+                    <span style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.8rem" }}>{post.date}</span>
                     <span style={{ color: "#CC0000", fontWeight: 700, fontSize: "0.85rem" }}>Read More →</span>
                   </div>
                 </div>
               </Link>
+              </AnimateIn>
             ))}
           </div>
         </div>

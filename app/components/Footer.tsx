@@ -83,10 +83,27 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* Amber tribute */}
+          <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: 20, marginBottom: 20, textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", gap: 10 }}>
+            <svg width="16" height="22" viewBox="0 0 16 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M8 0C5.5 0 3.5 2 3.5 4.5C3.5 6.5 4.7 8.2 6.5 9.1L2 14.5C1 15.8 0.5 17.3 0.5 18.8C0.5 20.6 1.9 22 3.7 22C4.9 22 6 21.3 6.6 20.2L8 17.8L9.4 20.2C10 21.3 11.1 22 12.3 22C14.1 22 15.5 20.6 15.5 18.8C15.5 17.3 15 15.8 14 14.5L9.5 9.1C11.3 8.2 12.5 6.5 12.5 4.5C12.5 2 10.5 0 8 0Z" fill="#E8A0BF"/>
+            </svg>
+            <span style={{ color: "#E8A0BF", fontSize: "0.82rem", fontStyle: "italic", letterSpacing: "0.06em", fontWeight: 600 }}>
+              Amber Strong
+            </span>
+            <svg width="16" height="22" viewBox="0 0 16 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M8 0C5.5 0 3.5 2 3.5 4.5C3.5 6.5 4.7 8.2 6.5 9.1L2 14.5C1 15.8 0.5 17.3 0.5 18.8C0.5 20.6 1.9 22 3.7 22C4.9 22 6 21.3 6.6 20.2L8 17.8L9.4 20.2C10 21.3 11.1 22 12.3 22C14.1 22 15.5 20.6 15.5 18.8C15.5 17.3 15 15.8 14 14.5L9.5 9.1C11.3 8.2 12.5 6.5 12.5 4.5C12.5 2 10.5 0 8 0Z" fill="#E8A0BF"/>
+            </svg>
+          </div>
+
           {/* Bottom bar */}
           <div style={{ borderTop: "1px solid rgba(255,255,255,0.1)", paddingTop: 24, display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
             <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.85rem" }}>
-              © {new Date().getFullYear()} Spot On Carpet & Tile Cleaning · Fresno, CA · Licensed & Insured
+              © {new Date().getFullYear()} Spot On Carpet & Tile Cleaning · Fresno, CA · Licensed & Insured · Built by{" "}
+              <a href="https://emberseo.ai" target="_blank" rel="noopener noreferrer"
+                style={{ color: "#CC0000", textDecoration: "none", fontWeight: 600 }}>
+                Ember SEO
+              </a>
             </p>
             <div style={{ display: "flex", gap: 20 }}>
               {[["Leave a Review ⭐", "https://www.yelp.com/writeareview/biz/Vzx8bVlmtH-Wkm8dr4xmcw"]].map(([label, href]) => (

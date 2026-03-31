@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AnimateIn from "../../components/AnimateIn";
 
 export const metadata: Metadata = {
   title: "Carpet Cleaning Kerman, CA | Eco-Friendly | (559) 721-4400",
@@ -24,9 +25,9 @@ export default function KermanPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
-      <section style={{ background: "linear-gradient(135deg, #1B2A4A 0%, #2a3f6f 50%, #1B2A4A 100%)", padding: "100px 24px 80px", textAlign: "center" }}>
+      <section style={{ background: "#1B2A4A", padding: "100px 24px 80px", textAlign: "center" }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
-          <div className="section-tag" style={{ background: "rgba(204,0,0,0.2)", color: "#fff" }}>Kerman, CA</div>
+          
           <h1 style={{ fontSize: "clamp(2rem, 5vw, 3.2rem)", fontWeight: 900, color: "#fff", lineHeight: 1.15, marginBottom: 20 }}>
             Carpet Cleaning in Kerman<br /><span style={{ color: "#CC0000" }}>Small-Town Values, Professional Results</span>
           </h1>
@@ -69,12 +70,14 @@ export default function KermanPage() {
               { icon: "🏗️", title: "Aggregate Cleaning", desc: "Driveways, patios, walkways — specialized surface care." },
               { icon: "🐾", title: "Pet Stain & Odor Removal", desc: "Complete extraction. No masking, no trace left behind." },
               { icon: "🏢", title: "Commercial Cleaning", desc: "Offices and businesses — flexible scheduling, volume pricing." },
-            ].map((s) => (
-              <div key={s.title} className="card" style={{ borderTop: "4px solid #CC0000" }}>
+            ].map((s, i) => (
+              <AnimateIn key={s.title} direction="up" delay={i * 80}>
+              <div className="card-dark">
                 <div style={{ fontSize: "2rem", marginBottom: 12 }}>{s.icon}</div>
-                <h3 style={{ color: "#1B2A4A", fontWeight: 700, fontSize: "1.05rem", marginBottom: 8 }}>{s.title}</h3>
-                <p style={{ color: "#555", lineHeight: 1.7, fontSize: "0.92rem" }}>{s.desc}</p>
+                <h3 style={{ color: "#fff", fontWeight: 700, fontSize: "1.05rem", marginBottom: 8 }}>{s.title}</h3>
+                <p style={{ color: "rgba(255,255,255,0.8)", lineHeight: 1.7, fontSize: "0.92rem" }}>{s.desc}</p>
               </div>
+              </AnimateIn>
             ))}
           </div>
         </div>

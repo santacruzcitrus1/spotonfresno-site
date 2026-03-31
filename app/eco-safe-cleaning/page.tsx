@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AnimateIn from "../components/AnimateIn";
 
 export const metadata: Metadata = {
   title: "Eco-Safe Cleaning Products | Biodegradable & Pet-Safe",
@@ -12,12 +13,12 @@ export default function EcoSafePage() {
     <>
       {/* Hero */}
       <section style={{
-        background: "linear-gradient(135deg, #1B2A4A 0%, #2a3f6f 50%, #1B2A4A 100%)",
+        background: "#1B2A4A",
         padding: "100px 24px 80px",
         textAlign: "center",
       }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
-          <div className="section-tag" style={{ background: "rgba(204,0,0,0.2)", color: "#fff" }}>Eco-Safe</div>
+          
           <h1 style={{
             fontSize: "clamp(2rem, 5vw, 3.2rem)",
             fontWeight: 900,
@@ -109,12 +110,14 @@ export default function EcoSafePage() {
               { icon: "🌎", title: "Better for the Planet", desc: "Biodegradable products break down naturally. Nothing harmful enters the soil or water supply." },
               { icon: "💧", title: "Water Conservation", desc: "Combined with our 80% less water method, we're reducing both chemical and water waste." },
               { icon: "✅", title: "Just as Effective", desc: "Eco-safe doesn't mean weaker. Our products lift deep stains, odors, and allergens — without the chemicals." },
-            ].map((item) => (
-              <div key={item.title} className="card" style={{ textAlign: "center" }}>
+            ].map((item, i) => (
+              <AnimateIn key={item.title} direction="up" delay={i * 80}>
+              <div className="card-dark" style={{ textAlign: "center" }}>
                 <div style={{ fontSize: "2.8rem", marginBottom: 14 }}>{item.icon}</div>
-                <h3 style={{ color: "#1B2A4A", fontWeight: 700, fontSize: "1.05rem", marginBottom: 10 }}>{item.title}</h3>
-                <p style={{ color: "#555", lineHeight: 1.7, fontSize: "0.95rem" }}>{item.desc}</p>
+                <h3 style={{ color: "#fff", fontWeight: 700, fontSize: "1.05rem", marginBottom: 10 }}>{item.title}</h3>
+                <p style={{ color: "rgba(255,255,255,0.8)", lineHeight: 1.7, fontSize: "0.95rem" }}>{item.desc}</p>
               </div>
+              </AnimateIn>
             ))}
           </div>
         </div>

@@ -2,14 +2,15 @@
 import Link from "next/link";
 import ReviewRotator from "./components/ReviewRotator";
 import CityPills from "./components/CityPills";
+import AnimateIn from "./components/AnimateIn";
 
 const services = [
-  { icon: "🏠", title: "Carpet Cleaning", desc: "Deep clean that lifts dirt, stains, and allergens from every fiber. Dry in as little as 4 hours." },
-  { icon: "🔲", title: "Tile & Grout Cleaning", desc: "Restore your tile to like-new condition. We go where scrubbing can't reach." },
-  { icon: "🛋️", title: "Upholstery Cleaning", desc: "Couches, chairs, and sofas cleaned with the same care as your floors." },
-  { icon: "🏗️", title: "Aggregate Cleaning", desc: "Specialized cleaning for exposed aggregate surfaces — driveways, patios, and more." },
-  { icon: "🐾", title: "Pet Stain & Odor", desc: "We specialize in complete pet stain and odor extraction. No trace left behind." },
-  { icon: "🏢", title: "Commercial Cleaning", desc: "We work around your business hours. Offices, buildings, and commercial spaces." },
+  { title: "Carpet Cleaning", sub: "80% less water · Dry in ~4 hours", desc: "Deep clean that lifts dirt, stains, and allergens from every fiber. Biodegradable products, no harsh residue.", link: "/services" },
+  { title: "Tile & Grout Cleaning", sub: "Ceramic, porcelain & stone", desc: "Restore your tile to like-new condition. We go where scrubbing can't reach — grout lines included.", link: "/services" },
+  { title: "Upholstery Cleaning", sub: "Couches, chairs & sofas", desc: "Fabric furniture cleaned with the same eco-safe products we use on your floors. Safe for pets and kids.", link: "/services" },
+  { title: "Aggregate Cleaning", sub: "Driveways, patios & walkways", desc: "Specialized cleaning for exposed aggregate surfaces. We remove embedded grime, mold, and weather stains.", link: "/services" },
+  { title: "Pet Stain & Odor", sub: "Complete odor extraction guaranteed", desc: "We specialize in complete pet stain and odor extraction. No masking — the problem disappears entirely.", link: "/services" },
+  { title: "Commercial Cleaning", sub: "Flexible scheduling · Volume pricing", desc: "Offices, retail, and commercial buildings cleaned around your hours. Volume discounts available.", link: "/services" },
 ];
 
 const stats = [
@@ -55,7 +56,7 @@ export default function Home() {
 
       {/* ===== HERO ===== */}
       <section style={{
-        background: "linear-gradient(135deg, #1B2A4A 0%, #2a3f6f 50%, #1B2A4A 100%)",
+        background: "#1B2A4A",
         padding: "100px 24px 90px",
         position: "relative",
         overflow: "hidden",
@@ -63,7 +64,7 @@ export default function Home() {
         {/* Background pattern */}
         <div style={{
           position: "absolute", inset: 0,
-          backgroundImage: "radial-gradient(circle at 20% 50%, rgba(204,0,0,0.12) 0%, transparent 60%), radial-gradient(circle at 80% 20%, rgba(255,255,255,0.04) 0%, transparent 50%)",
+          backgroundImage: "none",
           pointerEvents: "none",
         }} />
 
@@ -153,7 +154,7 @@ export default function Home() {
       </section>
 
       {/* ===== SERVICES GRID ===== */}
-      <section style={{ padding: "88px 24px", background: "#fff" }}>
+      <section style={{ padding: "88px 24px 120px", background: "#fff", position: "relative" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 56 }}>
             <div className="section-tag">What We Do</div>
@@ -164,28 +165,34 @@ export default function Home() {
           </div>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 24 }}>
-            {services.map((service) => (
-              <div key={service.title} className="card" style={{ 
-                background: "#1B2A4A", 
-                borderTop: "4px solid #1B2A4A",
-                padding: "24px",
+            {services.map((service, i) => (
+              <AnimateIn key={service.title} direction="up" delay={i * 80}>
+              <div className="card" style={{
+                background: "#1B2A4A",
+                padding: "28px",
                 borderRadius: "12px",
                 transition: "all 0.3s ease",
-                cursor: "pointer"
+                cursor: "pointer",
+                display: "flex",
+                flexDirection: "column",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.boxShadow = "0 0 24px 0 rgba(204,0,0,0.6), inset 0 0 24px 0 rgba(204,0,0,0.1)";
-                e.currentTarget.style.borderColor = "#CC0000";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.08)";
-                e.currentTarget.style.borderColor = "#1B2A4A";
               }}
               >
-                <div style={{ fontSize: "2.4rem", marginBottom: 14 }}>{service.icon}</div>
-                <h3 style={{ color: "#fff", fontWeight: 700, fontSize: "1.1rem", marginBottom: 10 }}>{service.title}</h3>
-                <p style={{ color: "rgba(255,255,255,0.8)", lineHeight: 1.7, fontSize: "0.95rem" }}>{service.desc}</p>
+                <div style={{ borderBottom: "1px solid rgba(204,0,0,0.4)", paddingBottom: 14, marginBottom: 14 }}>
+                  <h3 style={{ color: "#fff", fontWeight: 700, fontSize: "1.1rem", marginBottom: 4 }}>{service.title}</h3>
+                  <span style={{ color: "#CC0000", fontSize: "0.82rem", fontWeight: 600, letterSpacing: "0.04em" }}>{service.sub}</span>
+                </div>
+                <p style={{ color: "rgba(255,255,255,0.8)", lineHeight: 1.7, fontSize: "0.93rem", flex: 1, marginBottom: 16 }}>{service.desc}</p>
+                <Link href={service.link} style={{ color: "#CC0000", fontWeight: 700, fontSize: "0.88rem", textDecoration: "none" }}>
+                  Learn More →
+                </Link>
               </div>
+              </AnimateIn>
             ))}
           </div>
 
@@ -194,14 +201,22 @@ export default function Home() {
             <Link href="/contact" className="btn-secondary">Get a Free Quote</Link>
           </div>
         </div>
+        {/* Chevron into Garo section */}
+        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, lineHeight: 0 }}>
+          <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style={{ width: "100%", height: 80, display: "block" }}>
+            <polygon points="0,0 720,80 1440,0 1440,80 0,80" fill="#1B2A4A" />
+          </svg>
+        </div>
       </section>
 
       {/* ===== WHO IS GARO? ===== */}
-      <section style={{ background: "#F5F5F5", padding: "88px 24px" }}>
+      <section style={{ background: "#1B2A4A", padding: "88px 24px 120px", position: "relative" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
           {/* Photo placeholder */}
+          <AnimateIn direction="left">
           <div style={{
-            background: "#1B2A4A",
+            background: "rgba(255,255,255,0.08)",
+            border: "2px dashed rgba(255,255,255,0.2)",
             borderRadius: 16,
             height: 420,
             display: "flex",
@@ -213,27 +228,30 @@ export default function Home() {
             gap: 12,
           }}>
             <div style={{ fontSize: "4rem" }}>📸</div>
-            <span>Photo coming soon</span>
+            <span>Garo&apos;s photo coming soon</span>
           </div>
+          </AnimateIn>
 
           {/* Content */}
+          <AnimateIn direction="right" delay={150}>
           <div>
-            <div className="section-tag">The Man Behind Spot On</div>
-            <h2 className="section-title">More Than Clean —<br />Built for Fresno</h2>
-            <p style={{ color: "#555", lineHeight: 1.8, marginBottom: 20, fontSize: "1.05rem" }}>
+            <div className="section-tag" style={{ background: "rgba(204,0,0,0.2)", color: "#CC0000" }}>The Man Behind Spot On</div>
+            <h2 className="section-title" style={{ color: "#fff" }}>More Than Clean —<br />Built for Fresno</h2>
+            <p style={{ color: "rgba(255,255,255,0.85)", lineHeight: 1.8, marginBottom: 20, fontSize: "1.05rem" }}>
               Garo has called Fresno home his entire life. When he launched Spot On Carpet & Tile Cleaning, the mission was clear — serve the same neighbors, families, and community that built this valley.
             </p>
-            <p style={{ color: "#555", lineHeight: 1.8, marginBottom: 20, fontSize: "1.05rem" }}>
-              Beyond the job, Garo volunteers at church and coaches the Tanya Braves 8th grade football team — giving back to the Central Valley the same way it gave to him.
+            <p style={{ color: "rgba(255,255,255,0.85)", lineHeight: 1.8, marginBottom: 20, fontSize: "1.05rem" }}>
+              Beyond the job, Garo volunteers at Holy Trinity Armenian Church and coaches the Tenaya Braves 8th grade football team — giving back to the Central Valley the same way it gave to him.
             </p>
-            <p style={{ color: "#555", lineHeight: 1.8, marginBottom: 32, fontSize: "1.05rem" }}>
-              When you call Spot On, you're not calling a franchise. You're calling your neighbor.
+            <p style={{ color: "rgba(255,255,255,0.85)", lineHeight: 1.8, marginBottom: 32, fontSize: "1.05rem" }}>
+              When you call Spot On, you&apos;re not calling a franchise. You&apos;re calling your neighbor.
             </p>
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
               <Link href="/about" className="btn-primary">Meet Garo</Link>
-              <a href="tel:5597214400" className="btn-secondary">Call (559) 721-4400</a>
+              <a href="tel:5597214400" className="btn-white">Call (559) 721-4400</a>
             </div>
           </div>
+          </AnimateIn>
         </div>
 
         <style>{`
@@ -241,6 +259,12 @@ export default function Home() {
             .garo-grid { grid-template-columns: 1fr !important; }
           }
         `}</style>
+        {/* Chevron into credibility section — white cuts into navy bottom */}
+        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, lineHeight: 0 }}>
+          <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style={{ width: "100%", height: 80, display: "block" }}>
+            <polygon points="0,0 720,80 1440,0 1440,80 0,80" fill="#fff" />
+          </svg>
+        </div>
       </section>
 
       {/* ===== CREDIBILITY ===== */}
@@ -252,6 +276,7 @@ export default function Home() {
           </div>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 32 }}>
+            <AnimateIn direction="left">
             <div 
               style={{ padding: "36px 32px", background: "linear-gradient(135deg, #1B2A4A, #2a3f6f)", borderRadius: 16, color: "#fff", transition: "all 0.3s ease", cursor: "pointer" }}
               onMouseEnter={(e) => {
@@ -270,7 +295,9 @@ export default function Home() {
                 Learn More →
               </Link>
             </div>
+            </AnimateIn>
 
+            <AnimateIn direction="up" delay={100}>
             <div 
               style={{ padding: "36px 32px", background: "linear-gradient(135deg, #CC0000, #AA0000)", borderRadius: 16, color: "#fff", transition: "all 0.3s ease", cursor: "pointer" }}
               onMouseEnter={(e) => {
@@ -289,7 +316,9 @@ export default function Home() {
                 Learn More →
               </Link>
             </div>
+            </AnimateIn>
 
+            <AnimateIn direction="right" delay={200}>
             <div 
               style={{ padding: "36px 32px", border: "2px solid #e8e8e8", borderRadius: 16, transition: "all 0.3s ease", cursor: "pointer" }}
               onMouseEnter={(e) => {
@@ -305,6 +334,7 @@ export default function Home() {
                 Fully licensed and insured for your peace of mind. We stand behind every job — if it's not right, we make it right.
               </p>
             </div>
+            </AnimateIn>
           </div>
         </div>
       </section>

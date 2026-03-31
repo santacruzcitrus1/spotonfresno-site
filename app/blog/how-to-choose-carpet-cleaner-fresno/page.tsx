@@ -22,12 +22,12 @@ export default function BlogPost() {
     <>
       {/* Hero */}
       <section style={{
-        background: "linear-gradient(135deg, #1B2A4A 0%, #2a3f6f 50%, #1B2A4A 100%)",
+        background: "#1B2A4A",
         padding: "100px 24px 70px",
         textAlign: "center",
       }}>
         <div style={{ maxWidth: 750, margin: "0 auto" }}>
-          <div className="section-tag" style={{ background: "rgba(204,0,0,0.2)", color: "#fff" }}>Guides</div>
+          
           <h1 style={{ fontSize: "clamp(1.8rem, 4.5vw, 2.8rem)", fontWeight: 900, color: "#fff", lineHeight: 1.2, marginBottom: 16 }}>
             How to Choose a Carpet Cleaner in Fresno: 7 Things to Look For
           </h1>

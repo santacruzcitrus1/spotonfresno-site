@@ -48,6 +48,39 @@ body {
   to { opacity: 1; transform: translateX(0); }
 }
 
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scroll-triggered animation classes — applied by AnimateIn component */
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.slide-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.slide-in-left.is-visible,
+.slide-in-right.is-visible,
+.slide-in-up.is-visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
 @keyframes countUp {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
@@ -203,6 +236,20 @@ body {
 
 .card:hover {
   box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+}
+
+.card-dark {
+  background: #1B2A4A;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 32px;
+  transition: var(--transition);
+  color: #fff;
+}
+
+.card-dark:hover {
+  box-shadow: 0 0 24px rgba(204,0,0,0.6), inset 0 0 24px rgba(204,0,0,0.08);
   transform: translateY(-4px);
 }
 

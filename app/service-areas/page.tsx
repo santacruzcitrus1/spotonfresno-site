@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AnimateIn from "../components/AnimateIn";
 
 export const metadata: Metadata = {
   title: "Service Areas | Central Valley Carpet & Tile Cleaning",
@@ -25,12 +26,12 @@ export default function ServiceAreasPage() {
     <>
       {/* Hero */}
       <section style={{
-        background: "linear-gradient(135deg, #1B2A4A 0%, #2a3f6f 50%, #1B2A4A 100%)",
+        background: "#1B2A4A",
         padding: "100px 24px 80px",
         textAlign: "center",
       }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
-          <div className="section-tag" style={{ background: "rgba(204,0,0,0.2)", color: "#fff" }}>Service Areas</div>
+          
           <h1 style={{
             fontSize: "clamp(2rem, 5vw, 3.2rem)",
             fontWeight: 900,
@@ -52,22 +53,37 @@ export default function ServiceAreasPage() {
       </section>
 
       {/* Cities Grid */}
-      <section style={{ padding: "88px 24px", background: "#F5F5F5" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+      <section style={{
+        padding: "88px 24px",
+        backgroundColor: "#F5F5F5",
+        backgroundImage: "url(/spotonfresno-site/almond-trees.jpg)",
+        backgroundSize: "cover",
+        backgroundPosition: "bottom center",
+        position: "relative",
+      }}>
+        {/* Soft white overlay — low opacity so the pink blossoms show through */}
+        <div style={{
+          position: "absolute", inset: 0,
+          backgroundColor: "rgba(245,245,245,0.50)",
+          pointerEvents: "none",
+        }} />
+        <div style={{ maxWidth: 1100, margin: "0 auto", position: "relative", zIndex: 1 }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 24 }}>
-            {cities.map((city) => (
-              <Link key={city.slug} href={`/service-areas/${city.slug}`} style={{ textDecoration: "none", color: "inherit" }}>
-                <div className="card" style={{ borderTop: "4px solid #CC0000", height: "100%" }}>
+            {cities.map((city, i) => (
+              <AnimateIn key={city.slug} direction="up" delay={i * 60}>
+              <Link href={`/service-areas/${city.slug}`} style={{ textDecoration: "none", color: "inherit" }}>
+                <div className="card-dark" style={{ height: "100%" }}>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
-                    <h2 style={{ fontSize: "1.3rem", fontWeight: 800, color: "#1B2A4A" }}>{city.name}</h2>
-                    <span style={{ background: "rgba(204,0,0,0.08)", color: "#CC0000", fontSize: "0.75rem", fontWeight: 700, padding: "4px 10px", borderRadius: 50 }}>
+                    <h2 style={{ fontSize: "1.3rem", fontWeight: 800, color: "#fff" }}>{city.name}</h2>
+                    <span style={{ background: "rgba(204,0,0,0.3)", color: "#fff", fontSize: "0.75rem", fontWeight: 700, padding: "4px 10px", borderRadius: 50 }}>
                       Pop. {city.pop}
                     </span>
                   </div>
-                  <p style={{ color: "#555", lineHeight: 1.7, fontSize: "0.95rem", marginBottom: 16 }}>{city.desc}</p>
+                  <p style={{ color: "rgba(255,255,255,0.8)", lineHeight: 1.7, fontSize: "0.95rem", marginBottom: 16 }}>{city.desc}</p>
                   <span style={{ color: "#CC0000", fontWeight: 700, fontSize: "0.9rem" }}>View Details →</span>
                 </div>
               </Link>
+              </AnimateIn>
             ))}
           </div>
         </div>
