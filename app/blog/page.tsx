@@ -74,7 +74,7 @@ export default function BlogPage() {
       <section style={{
         padding: "88px 24px",
         backgroundColor: "#F5F5F5",
-        backgroundImage: "url(/spotonfresno-site/fresno-downtown.jpg)",
+        backgroundImage: "url(/fresno-downtown.jpg)",
         backgroundSize: "cover",
         backgroundPosition: "center",
         position: "relative",

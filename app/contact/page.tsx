@@ -37,7 +37,7 @@ export default function ContactPage() {
 
       {/* Contact Content */}
       <section style={{ padding: "88px 24px", background: "#fff" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 56 }}>
+        <div className="grid-2col" style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 56 }}>
           {/* Left: Contact Info */}
           <AnimateIn direction="left">
           <div>

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 const services = [
   {
     title: "Carpet Cleaning",
-    photo: "/spotonfresno-site/carpet-clean.jpg", // real clean carpet living room photo from Judd
+    photo: "/carpet-clean.jpg", // real clean carpet living room photo from Judd
     desc: "Our low-moisture carpet cleaning lifts deep-set dirt, allergens, and stains from every fiber — without soaking your carpet. Most rooms dry in about 4 hours, not 24. We use 100% biodegradable, pet-safe products that leave zero toxic residue.",
     features: ["Deep fiber extraction", "Pet-safe & eco-friendly", "Dries in ~4 hours", "80% less water than steam"],
   },
@@ -32,13 +32,13 @@ const services = [
   },
   {
     title: "Aggregate Cleaning",
-    photo: "/spotonfresno-site/aggregate-clean.jpg", // real aggregate flooring photo
+    photo: "/aggregate-clean.jpg", // real aggregate flooring photo
     desc: "Exposed aggregate driveways, patios, and walkways need specialized care. We clean and restore aggregate surfaces, removing embedded grime, mold, and weather stains to bring back the original texture and appearance.",
     features: ["Driveways & patios", "Mold & mildew removal", "Restores original texture", "Weather stain removal"],
   },
   {
     title: "Pet Stain & Odor Removal",
-    photo: "/spotonfresno-site/garo-dog.jpg", // Garo's dog + daughter on carpet (his real photo)
+    photo: "/garo-dog.jpg", // Garo's dog + daughter on carpet (his real photo)
     desc: "We specialize in complete pet stain and odor extraction. Our products break down organic matter at the molecular level — no masking, no cover-ups. If your pet left a mark, we'll make it disappear completely.",
     features: ["Complete odor extraction", "Enzyme-based treatment", "No masking fragrances", "Safe for all pets"],
   },
@@ -61,7 +61,7 @@ function ServiceRow({ service, index, isNavy, isLast }: {
   const chipBg = isNavy ? "rgba(255,255,255,0.12)" : "rgba(27,42,74,0.07)";
 
   return (
-    <div style={{
+    <div className="service-row" style={{
       display: "grid",
       gridTemplateColumns: "1fr 1fr",
       gap: 56,

@@ -17,13 +17,18 @@ export default function Nav() {
   return (
     <header style={{ background: "#fff", boxShadow: "0 2px 12px rgba(0,0,0,0.08)", position: "sticky", top: 0, zIndex: 999 }}>
       {/* Top bar */}
-      <div style={{ background: "#1B2A4A", padding: "8px 24px", textAlign: "center" }}>
+      <div style={{ background: "#1B2A4A", padding: "8px 24px", textAlign: "center", display: "flex", justifyContent: "center", alignItems: "center", flexWrap: "wrap", gap: "4px 0" }}>
         <a href="tel:5597214400" style={{ color: "#fff", textDecoration: "none", fontWeight: 700, fontSize: "0.95rem", letterSpacing: "0.03em" }}>
           📞 Call or Text: (559) 721-4400
         </a>
-        <span style={{ color: "rgba(255,255,255,0.5)", margin: "0 16px" }}>|</span>
-        <span style={{ color: "rgba(255,255,255,0.8)", fontSize: "0.85rem" }}>Mon–Fri 7:30AM–6PM · Sat 8AM–1PM</span>
+        <span className="nav-hours" style={{ color: "rgba(255,255,255,0.5)", margin: "0 16px" }}>|</span>
+        <span className="nav-hours" style={{ color: "rgba(255,255,255,0.8)", fontSize: "0.85rem" }}>Mon–Fri 7:30AM–6PM · Sat 8AM–1PM</span>
       </div>
+      <style>{`
+        @media (max-width: 500px) {
+          .nav-hours { display: none !important; }
+        }
+      `}</style>
 
       {/* Main nav */}
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 68 }}>

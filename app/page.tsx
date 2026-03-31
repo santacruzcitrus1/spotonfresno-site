@@ -143,7 +143,7 @@ export default function Home() {
 
       {/* ===== STATS BAR ===== */}
       <section style={{ background: "#CC0000", padding: "28px 24px" }}>
-        <div style={{ maxWidth: 900, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16, textAlign: "center" }}>
+        <div className="stats-bar-grid" style={{ maxWidth: 900, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16, textAlign: "center" }}>
           {stats.map((stat) => (
             <div key={stat.value}>
               <div style={{ color: "#fff", fontSize: "clamp(1.6rem, 4vw, 2.4rem)", fontWeight: 900, lineHeight: 1 }}>{stat.value}</div>
@@ -211,7 +211,7 @@ export default function Home() {
 
       {/* ===== WHO IS GARO? ===== */}
       <section style={{ background: "#1B2A4A", padding: "88px 24px 120px", position: "relative" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
+        <div className="grid-2col" style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
           {/* Photo placeholder */}
           <AnimateIn direction="left">
           <div style={{

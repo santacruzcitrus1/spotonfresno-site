@@ -97,7 +97,7 @@ export default function FresnoPage() {
       <section style={{ padding: "72px 24px", background: "#fff" }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
           <div className="section-tag">Why Fresno Chooses Spot On</div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, marginTop: 24 }}>
+          <div className="grid-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, marginTop: 24 }}>
             {[
               "⭐ 5.0 Stars — 28 Yelp Reviews",
               "🌿 100% Eco-Friendly Products",

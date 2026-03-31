@@ -26,6 +26,13 @@ const values = [
 export default function AboutPage() {
   return (
     <>
+      <style>{`
+        @media (max-width: 768px) {
+          .about-photo { height: 280px !important; }
+          .about-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+          .story-bg { background-position: 23% center !important; }
+        }
+      `}</style>
       {/* Hero */}
       <section style={{
         background: "#1B2A4A",
@@ -51,16 +58,16 @@ export default function AboutPage() {
       </section>
 
       {/* Garo's Story — team photo ghosted in background */}
-      <section style={{
+      <section className="story-bg" style={{
         padding: "88px 24px",
         backgroundColor: "#fff",
-        backgroundImage: "url(/spotonfresno-site/garo-bulldogs-flag.jpg)",
+        backgroundImage: "url(/garo-bulldogs-flag.jpg)",
         backgroundSize: "cover",
         backgroundPosition: "center top",
         position: "relative",
       }}>
         <div style={{ position: "absolute", inset: 0, backgroundColor: "rgba(255,255,255,0.55)", pointerEvents: "none" }} />
-        <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center", position: "relative", zIndex: 1 }}>
+        <div className="grid-2col" style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center", position: "relative", zIndex: 1 }}>
 
           {/* Content — left column so Garo (right in bg photo) stays visible */}
           <AnimateIn direction="left">
@@ -85,14 +92,14 @@ export default function AboutPage() {
 
           {/* Family photo card — right column covers Amber side of bg photo */}
           <AnimateIn direction="right" delay={150}>
-          <div style={{
+          <div className="about-photo" style={{
             borderRadius: 16,
             overflow: "hidden",
             height: 450,
             boxShadow: "0 8px 32px rgba(0,0,0,0.18)",
           }}>
             <img
-              src="/spotonfresno-site/garo-family.jpg"
+              src="/garo-family.jpg"
               alt="Garo and his family"
               style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }}
             />
@@ -103,17 +110,17 @@ export default function AboutPage() {
 
       {/* Holy Trinity Church section — photo left, text right (alternating from story section) */}
       <section style={{ background: "#1B2A4A", padding: "88px 24px" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
+        <div className="grid-2col" style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
           {/* Church photo — left */}
           <AnimateIn direction="left">
-          <div style={{
+          <div className="about-photo" style={{
             borderRadius: 16,
             overflow: "hidden",
             height: 420,
             boxShadow: "0 8px 32px rgba(0,0,0,0.3)",
           }}>
             <img
-              src="/spotonfresno-site/holy-trinity-church.jpg"
+              src="/holy-trinity-church.jpg"
               alt="Garo volunteering at Holy Trinity Armenian Church"
               style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }}
             />

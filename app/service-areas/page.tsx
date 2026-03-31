@@ -56,7 +56,7 @@ export default function ServiceAreasPage() {
       <section style={{
         padding: "88px 24px",
         backgroundColor: "#F5F5F5",
-        backgroundImage: "url(/spotonfresno-site/almond-trees.jpg)",
+        backgroundImage: "url(/almond-trees.jpg)",
         backgroundSize: "cover",
         backgroundPosition: "bottom center",
         position: "relative",

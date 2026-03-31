@@ -23,6 +23,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -30,6 +31,7 @@ body {
   color: var(--navy);
   background: #fff;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 /* ---- Animations ---- */
@@ -265,5 +267,41 @@ body {
     flex-direction: column;
     gap: 12px;
     text-align: center;
+  }
+
+  /* Force single column on mobile for fixed 2-col grids */
+  .grid-2col {
+    grid-template-columns: 1fr !important;
+    direction: ltr !important;
+  }
+
+  /* Stack flex rows on mobile */
+  .flex-row-mobile {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  /* Stats bar — 2x2 on mobile */
+  .stats-bar-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Services row — remove rtl flip */
+  .service-row {
+    grid-template-columns: 1fr !important;
+    direction: ltr !important;
+    gap: 32px !important;
+  }
+
+  /* Top bar — stack on small screens */
+  .nav-top-bar {
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px 16px;
+  }
+
+  /* Fix hero text overflow */
+  .hero-section {
+    padding: 60px 16px 50px !important;
   }
 }
