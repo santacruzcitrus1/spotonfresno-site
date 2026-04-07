@@ -1,4 +1,4 @@
 :HL["/_next/static/chunks/0av82b2c9k.85.css","style"]
 :HL["/garo-family.jpg","image"]
 :HL["/holy-trinity-church.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"about","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"hzJB5X2mlUDttwNKDPxtX"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"about","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"SUWx3LhO2ukk3nkO8uu5_"}
